@@ -1,0 +1,50 @@
+
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Nom</ng-template>
+      <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="Nom correu" formControlName="dnommail" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Següent</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Dades correu </ng-template>
+      <div class="row">
+        <div class="column">
+          <mat-form-field>
+            <mat-label>Correu</mat-label>
+            <input matInput formControlName="mailuser"  
+                   required>
+          </mat-form-field>
+        </div>
+        <div class="column">
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="passmail" placeholder="password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="column">
+          <ng-template matStepLabel>Link</ng-template>
+          <mat-form-field>
+            <mat-label>Link</mat-label>
+            <input matInput formControlName="lnkmail" placeholder="link"
+                   required>
+          </mat-form-field>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious>Endarrere</button>
+        <button mat-button (click)="Send()">Enviar</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
