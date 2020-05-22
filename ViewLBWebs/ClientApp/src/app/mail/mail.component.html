@@ -3,29 +3,29 @@
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container matColumnDef="dnommail">
-        <th mat-header-cell *matHeaderCellDef> User </th>
+        <th mat-header-cell *matHeaderCellDef> Nom </th>
         <td mat-cell *matCellDef="let element"> {{element.dnommail}} </td>
       </ng-container>
 
       <ng-container matColumnDef="mailuser">
-        <th mat-header-cell *matHeaderCellDef> Password </th>
+        <th mat-header-cell *matHeaderCellDef> mail </th>
         <td mat-cell *matCellDef="let element"> {{element.mailuser}} </td>
       </ng-container>
 
       <ng-container matColumnDef="passmail">
-        <th mat-header-cell *matHeaderCellDef> Link </th>
+        <th mat-header-cell *matHeaderCellDef> Password </th>
         <td mat-cell *matCellDef="let element"> {{element.passmail}} </td>
       </ng-container>
 
       <ng-container matColumnDef="lnkmail">
         <th mat-header-cell *matHeaderCellDef> Acces </th>
-        <td mat-cell *matCellDef="let element"> {{element.lnkmail}} </td>
+        <td mat-cell *matCellDef="let element"> <a href="{{element.lnkmail}}" target="_blank"> Enllaç</a> </td>
       </ng-container>
 
       <ng-container matColumnDef="accions">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
-          <button mat-flat-button color="primary" (click)="updateData(element.idlbmail)">Editar</button>
+          <button mat-flat-button color="primary" class="pene" (click)="updateData(element.idlbmail)">Editar</button>
           <button mat-flat-button color="accent" (click)="deleteData(element.idlbmail)">Borrar</button>
         </td>
       </ng-container>
