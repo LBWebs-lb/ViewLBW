@@ -26,3 +26,41 @@ table {
   float: right;
   margin-top: 25px !important;
 }
+
+.espai_logo_lb {
+  padding-left: 300px;
+  padding-bottom: 50px;
+}
+.text_logo {
+
+  color: #F49110;
+  font-size:42px;
+  
+  
+}
+
+.text_links {
+
+  color: #F49110;
+}
+
+.eslogan_logo{
+    color:white;
+    
+}
+
+.footer_apiview {
+  background: #141414;
+  padding-top: 50px;
+}
+
+.footer-copyright {
+  background: #F49110;
+}
+.links {
+  text-align: center;
+}
+
+a{
+    color:white;
+}
