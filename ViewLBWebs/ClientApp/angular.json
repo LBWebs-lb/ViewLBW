@@ -147,5 +147,8 @@
       }
     }
   },
-  "defaultProject": "ViewLBWebs"
+  "defaultProject": "ViewLBWebs",
+  "cli": {
+    "analytics": "b7adb63f-1e65-4dc3-8577-a0787e015186"
+  }
 }
