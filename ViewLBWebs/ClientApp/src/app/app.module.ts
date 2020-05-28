@@ -19,6 +19,7 @@ import { DemoMaterialModule } from './material-module';
 import { MailComponent } from './mail/mail.component';
 import { MailAddComponent } from './mail/mail-add/mail-add.component';
 import { ClientsComponent } from './clients/clients.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ClientsComponent } from './clients/clients.component';
     AccesUpdateComponent,
     MailComponent,
     MailAddComponent,
-    ClientsComponent
+    ClientsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -52,7 +54,7 @@ import { ClientsComponent } from './clients/clients.component';
       { path: 'mail', component: MailComponent },
       { path: 'mail-add', component: MailAddComponent },
       { path: 'clients', component: ClientsComponent },
-
+      { path: 'login', component: LoginComponent },
 
     ]),
     BrowserAnimationsModule,
