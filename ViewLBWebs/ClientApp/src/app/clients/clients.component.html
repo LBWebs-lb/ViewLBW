@@ -9,15 +9,20 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
 
-    <mat-form-field>
-      <mat-label>First name</mat-label>
-      <input matInput>
+    <mat-form-field appearance="fill">
+      <mat-label>Accions</mat-label>
+      <mat-select>
+        <mat-option value="option">Option</mat-option>
+        <mat-option value="option">Option</mat-option>
+        <mat-option value="option">Option</mat-option>
+        <mat-option value="option">Option</mat-option>
+        <mat-option value="option">Option</mat-option>
+        <mat-option value="option">Option</mat-option>
+        <mat-option value="option">Option</mat-option>
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
     </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>Age</mat-label>
-      <input matInput type="number" min="1">
-    </mat-form-field>
+    <button mat-button color="primary">Primary</button>
   </mat-expansion-panel>
   <mat-expansion-panel (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false">
@@ -39,9 +44,7 @@
 
   <p>This is the primary content of the panel.</p>
 
-  <mat-action-row>
-    <button mat-button>Click me</button>
-  </mat-action-row>
+
 </mat-expansion-panel>
 <mat-expansion-panel>
   <mat-expansion-panel-header>
