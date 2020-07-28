@@ -1,25 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ClientService } from './client.service';
+import { Clients } from './clients';
+
 
 @Component({
   selector: 'app-clients',
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.css']
 })
-export class ClientsComponent implements OnInit {
+
+export class ClientsComponent {
   panelOpenState = false;
+  dataSource;
+  displayedColumns: string[];
 
-  //constructor(private ClientService: ClientService) { }
-  constructor() { }
+  constructor(private clientService: ClientService) { }
 
-  ngOnInit() {
-    //this.ClientService.getData()
-    //  .subscribe((result) => {
-    //    //this.displayedColumns = ['userWp', 'passWd', 'linkWp', 'acc', 'accions'];
-    //    //this.dataSource = result as Acces[];
-    //  },
-    //    (error) => {
-    //      console.error(error);
-    //    });
+  ngOnInit(): void {
+    this.clientService.getData()
+      .subscribe((result) => {
+        this.displayedColumns = ['dnom', 'est', 'dobs', 'tcli'];
+        this.dataSource = result as Clients[];
+      },
+        (error) => {
+          console.error(error);
+        });
   } 
 }

@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../services/http.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+
 export class ClientService {
 
-  public route: string = 'http://localhost:49489/api/lbcli';
+  public route: string = 'http://localhost:49489/api/clilbs';
   constructor(private httpService: HttpService) { }
 
   getData(id?: number) {
