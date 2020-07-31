@@ -1,54 +1,26 @@
-<mat-accordion>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title *matCellDef="let element">
-        {{element.dnom}}
-      </mat-panel-title>
-      <mat-panel-description *matCellDef="let element">
-        {{element.est}}
-      </mat-panel-description>
-    </mat-expansion-panel-header>
+<div style="width: 70%;margin:0 auto" *ngIf="dataSource!=null">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let p of dataSource">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{p.dnom}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{p.est}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
 
-    <!--<mat-form-field appearance="fill">
-      <mat-label>Accions</mat-label>
-      <mat-select>
-        <mat-option value="option"></mat-option>
-        <mat-option value="option">Predisseny</mat-option>
-        <mat-option value="option">Desenvolupament</mat-option>
-        <mat-option value="option">FTP</mat-option>
-        <mat-option value="option">Hosting</mat-option>
-      </mat-select>
-    </mat-form-field>-->
-    <!--<button mat-button color="primary">Primary</button>-->
-  </mat-expansion-panel>
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Self aware panel
-      </mat-panel-title>
-      <mat-panel-description>
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p>I'm visible because I am open</p>
-  </mat-expansion-panel>
-</mat-accordion>
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <!--This is the expansion title-->
-  </mat-expansion-panel-header>
-
-  <p>This is the primary content of the panel.</p>
-
-
-</mat-expansion-panel>
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    This is the expansion title
-  </mat-expansion-panel-header>
-
-  <ng-template matExpansionPanelContent>
-    Some deferred content
-  </ng-template>
-</mat-expansion-panel>
+      <mat-form-field appearance="fill">
+        <mat-label>Accions</mat-label>
+        <mat-select>
+          <mat-option value="option"></mat-option>
+          <mat-option value="option">Predisseny</mat-option>
+          <mat-option value="option">Desenvolupament</mat-option>
+          <mat-option value="option">FTP</mat-option>
+          <mat-option value="option">Hosting</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-button color="primary">Primary</button>
+    </mat-expansion-panel>
+    </mat-accordion>
+  </div>

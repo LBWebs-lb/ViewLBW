@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ClientService } from './client.service';
-import { Clients } from './clients';
-
+import { Client } from './clients';
 
 @Component({
   selector: 'app-clients',
@@ -17,13 +16,17 @@ export class ClientsComponent {
   constructor(private clientService: ClientService) { }
 
   ngOnInit(): void {
+    this.fetchData();
+  }
+
+  fetchData() {
     this.clientService.getData()
       .subscribe((result) => {
-        this.displayedColumns = ['dnom', 'est', 'dobs', 'tcli'];
-        this.dataSource = result as Clients[];
+        this.displayedColumns = ['dnom', 'est'];
+        this.dataSource = result as Client[];
       },
         (error) => {
           console.error(error);
         });
-  } 
+  }
 }

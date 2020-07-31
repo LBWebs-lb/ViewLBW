@@ -8,14 +8,13 @@ import { HttpService } from '../services/http.service';
 export class ClientService {
 
   public route: string = 'http://localhost:49489/api/clilbs';
+
   constructor(private httpService: HttpService) { }
 
   getData(id?: number) {
     if (id > 0) {
-      let route: string = this.route + "/" + id;
-      return this.httpService.getData(route);
-    } else {
-      return this.httpService.getData(this.route);
+      this.route = this.route + "/" + id;
     }
+    return this.httpService.getData(this.route);
   }
 }

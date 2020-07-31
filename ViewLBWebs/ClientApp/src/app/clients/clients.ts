@@ -1,4 +1,4 @@
-export interface Clients {
+export interface Client {
   icli: number,
   dnom: string,
   dnommail: string,
