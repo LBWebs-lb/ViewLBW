@@ -56,12 +56,10 @@ table {
   text-align: center;
   color: white;
 }
-
-.hidetext {
-  -webkit-text-security: disc;
-}
-
 footer .row {
   margin-right: 0;
   margin-left: 0;
+}
+.inputang {
+    border:none;
 }

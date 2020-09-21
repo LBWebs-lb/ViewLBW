@@ -34,4 +34,7 @@ export class AccesService {
     let route: string = this.route + "/" + id;
     return this.httpService.UpdateData(route, accesUpdateForm)
   }
+  descrinptpassword(strpassword: string) {
+    return this.httpService.DesPassword(this.route, strpassword)
+  }
 }

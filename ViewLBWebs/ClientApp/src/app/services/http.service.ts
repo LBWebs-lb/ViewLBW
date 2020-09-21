@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { FormGroup } from '@angular/forms';
 import { Acces } from '../acces/acces';
@@ -27,6 +27,11 @@ export class HttpService {
 
   public deleteData(id: number, route: string): Observable<void> {
     return this.httpService.delete<void>(`${route}/${id}`);
+  }
+
+  public DesPassword(route: string, strpassword: string) {
+    const option = {headers: new HttpHeaders({ 'Content-Type': 'application/json' }) ,strpassword}
+    return this.httpService.request("DesncriptPassword", route, option)
   }
 
 }
