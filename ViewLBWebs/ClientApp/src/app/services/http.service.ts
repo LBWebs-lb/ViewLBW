@@ -29,9 +29,8 @@ export class HttpService {
     return this.httpService.delete<void>(`${route}/${id}`);
   }
 
-  public DesPassword(route: string, strpassword: string) {
-    const option = {headers: new HttpHeaders({ 'Content-Type': 'application/json' }) ,strpassword}
-    return this.httpService.request("DesncriptPassword", route, option)
+  public DesPassword(route: string) {
+    return this.httpService.get(route)
   }
 
 }

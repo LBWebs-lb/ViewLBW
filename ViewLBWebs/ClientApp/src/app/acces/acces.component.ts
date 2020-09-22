@@ -14,7 +14,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 export class AccesComponent {
   public accesses: Acces[];
   dataSource; 
-  displayedColumns:string[];
+  displayedColumns: string[];
+  pass;
 
   constructor(private accesService: AccesService,
     private router: Router, public dialog: MatDialog) { }
@@ -49,7 +50,8 @@ export class AccesComponent {
   }
 
   descrinptpassword(strpassword: string) {
-    this.accesService.descrinptpassword(strpassword)
+    this.accesService.descrinptpassword(strpassword).subscribe(data => this.pass = data);
+    alert(this.pass.tostring);
   }
 
 }

@@ -35,6 +35,6 @@ export class AccesService {
     return this.httpService.UpdateData(route, accesUpdateForm)
   }
   descrinptpassword(strpassword: string) {
-    return this.httpService.DesPassword(this.route, strpassword)
+    return this.httpService.DesPassword(this.route + "/getpass/" + strpassword);
   }
 }
