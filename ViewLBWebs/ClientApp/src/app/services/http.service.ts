@@ -29,7 +29,7 @@ export class HttpService {
     return this.httpService.delete<void>(`${route}/${id}`);
   }
 
-  public DesPassword(route: string) {
+  public DesPassword(route: string)  {
     return this.httpService.get(route)
   }
 

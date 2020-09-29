@@ -49,9 +49,8 @@ export class AccesComponent {
     this.router.navigate(['update-acces'], { queryParams: { id: accesid } });
   }
 
-  descrinptpassword(strpassword: string) {
-    this.accesService.descrinptpassword(strpassword).subscribe(data => this.pass = data);
-    alert(this.pass.tostring);
+  descrinptpassword(accesid: number) {
+    this.pass = this.accesService.descrinptpassword(accesid);
+    alert(this.pass);
   }
-
 }
